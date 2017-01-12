@@ -1,8 +1,6 @@
 #!/bin/bash
 
-##
-# websites retriever - paginas amarillas
-##
+## Paginasamarillas scraper
 
 name="$1"
 

@@ -24,7 +24,7 @@ Basically, the scraper retrieves all the urls from a certain category, service o
 
 ### Output
 
-- Inside `services.txt`
+Inside `services.txt`
 
 - `http://www.simaramedicinaprepaga.com`
 - `http://www.hospitalheca.org`

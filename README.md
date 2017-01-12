@@ -29,7 +29,7 @@ Basically, the scraper retrieves all the urls from a certain category, service o
 - `http://www.simaramedicinaprepaga.com`
 - `http://www.hospitalheca.org`
 - `http://www.ssanmartin.com`
-- `http://www.sanatoriocastelli.com.ar
+- `http://www.sanatoriocastelli.com.ar`
 - `http://www.centromedicodelavisionprivado.com`
 - `http://www.hospinotti.mendoza.gov.ar`
 - `http://www.hospitallloveras.com`

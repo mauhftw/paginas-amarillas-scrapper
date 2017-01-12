@@ -1,4 +1,4 @@
-# paginas-amarillas-scraper
+# Paginas amarillas scraper
 
 A CLI tool developed in BASH for scraping https://www.paginasamarillas.com.ar (works for others paginasamarillas ccTLD).
 

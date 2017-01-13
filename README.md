@@ -13,7 +13,7 @@ Basically, the scraper retrieves all the urls from a certain category, service o
 
 ## Usage
 
-1. Get the desired url's services you want to retrieve.
+1. Get the desired service's urls  you want to retrieve.
 2. Run scraper.sh `target_url`
 3. Open services.txt
 4. Have fun!

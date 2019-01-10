@@ -14,8 +14,8 @@ fi
 
 # Retrieve URLs
 get_urls() {
-	local URL="$1"
-	local CHILD_PAGE="$2"
+  local URL="$1"
+  local CHILD_PAGE="$2"
 
 	if [ -z $CHILD_PAGE ]; then
     curl -sSL $URL | grep "WEB -->" -A3 | grep "div" -A1 | \

@@ -1,6 +1,6 @@
 # Paginas amarillas scraper
 
-A CLI tool developed in BASH for scraping https://www.paginasamarillas.com.ar (works for others paginasamarillas ccTLD).
+A CLI tool developed in BASH for scraping https://www.paginasamarillas.com.ar (works for others yellow pages with other ccTLD).
 
 ## Summary
 
@@ -9,7 +9,6 @@ Basically, the scraper retrieves all the urls from a certain category, service o
 ## Setup
 
 1. clone the repository `git clone https://github.com/mauhftw/paginas-amarillas-scrapper/`
-2. change scraper permissions `chmod +x scraper.sh`
 
 ## Usage
 
@@ -22,7 +21,7 @@ Basically, the scraper retrieves all the urls from a certain category, service o
 
 ### Retrieve Medicina's urls
 
-`scraper.sh http://www.paginasamarillas.com.ar/buscar/q/medicina/`
+`./scraper http://www.paginasamarillas.com.ar/buscar/q/medicina/`
 
 ### Output
 
@@ -43,6 +42,3 @@ Inside `services.txt`
 - `http://www.sanatoriodelamujer.com.ar`
 - `http://www.favaloro.edu.ar`
 - `http://www.cajaforensern.org.ar`
-
-`
-

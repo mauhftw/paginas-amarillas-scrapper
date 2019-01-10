@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+
+set -e
+
+# Sets the name of the output file
+readonly OUTPUT_NAME="services.txt"
+TARGET="$1"
+
+# Check if argument is provided
+if  [ -z "$TARGET" ]; then
+	echo "Usage: scraper [url]";
+	exit 1
+fi
+
+# Retrieve URLs
+get_urls() {
+	local URL="$1"
+	local CHILD_PAGE="$2"
+
+	if [ -z $CHILD_PAGE ]; then
+    curl -sSL $URL | grep "WEB -->" -A3 | grep "div" -A1 | \
+    grep "href" | awk '{print $11}' | awk -F '=' '{print $2}' | \
+    tr -d '"' | sort > $OUTPUT_NAME
+  else
+  	curl -sSL $URL | grep "WEB -->" -A3 | grep "div" -A1 | \
+    grep "href" | awk '{print $11}' | awk -F '=' '{print $2}' | \
+    tr -d '"' | sort >> $OUTPUT_NAME
+  fi
+
+}
+
+# Get no. of pages
+get_pages() {
+  local PAGES="$1"
+  PAGES="curl -sSL $TARGET | grep ${TARGET}p- | egrep -v 'link|raquo'"
+  PAGES=$(eval $PAGES | awk -F '\"' '{print $2}')
+  echo "$PAGES"
+}
+
+
+# Scrap and retrieve urls
+scrap() {
+  local CHILD_PAGES="$1"
+  local URLS="$TARGET"
+
+  if [ "$CHILD_PAGES" ]; then
+	  PAGINATION_ENABLED=1
+		  for i in "$CHILD_PAGES"; do
+			  get_urls "$i" "$PAGINATION_ENABLED"
+	    done
+  else
+	  get_urls "$URLS"
+  fi
+}
+
+
+main () {
+  PAGES=$(get_pages)
+  scrap "$PAGES"
+  cat "$OUTPUT_NAME"
+}
+
+
+# Run main functionality
+main
